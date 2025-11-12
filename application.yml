@@ -1,11 +1,14 @@
+server:
+  port: 8086
+
 spring:
   application:
-    name: Config-Default
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8084/eureka
+    name: CONFIG-SERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Nneeraj24/microservice-tutorial-config
+          clone-on-start: true
+          default-label: main
